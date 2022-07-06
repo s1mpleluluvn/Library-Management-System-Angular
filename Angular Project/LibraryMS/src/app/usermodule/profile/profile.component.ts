@@ -14,7 +14,7 @@ export class ProfileComponent implements OnInit {
   userid;
   adminMembersUp;
   public members = [];
-  constructor(private userDet: UserOwnedService, private memberSer: AdminMembersService, private fbd: FormBuilder, ) { }
+  constructor(private userDet: UserOwnedService, public memberSer: AdminMembersService, private fbd: FormBuilder, ) { }
 
   ngOnInit() {
     //local storage

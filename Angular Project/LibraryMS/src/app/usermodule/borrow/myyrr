@@ -13,7 +13,7 @@ import { AdminMembersService } from 'src/app/adminServices/admin-members.service
 })
 export class BorrowComponent implements OnInit {
 
-  constructor(private bookSer: AdminBooksService, private userDet: UserOwnedService, private memberSer: AdminMembersService, ) { }
+  constructor(public bookSer: AdminBooksService, private userDet: UserOwnedService, public memberSer: AdminMembersService, ) { }
 
   badge;
   requestedBooks = [];

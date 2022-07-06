@@ -13,7 +13,7 @@ import { AdminMembersService } from 'src/app/adminServices/admin-members.service
 })
 export class BorrowComponent implements OnInit {
 
-  constructor(private bookSer: AdminBooksService, private userDet: UserOwnedService, private memberSer: AdminMembersService, ) {
+  constructor(public bookSer: AdminBooksService, private userDet: UserOwnedService, public memberSer: AdminMembersService, ) {
 
   }
   ngAfterViewInit() {
@@ -29,6 +29,7 @@ export class BorrowComponent implements OnInit {
   public recievedBooks = [];
   userid;
   public books = [];
+  bookSearch;
 
   rec() {
     this.recievedBooks = JSON.parse(this.user.urecj);

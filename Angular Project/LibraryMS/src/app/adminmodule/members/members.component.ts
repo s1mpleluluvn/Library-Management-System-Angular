@@ -12,12 +12,13 @@ import { IMember } from './members';
 export class MembersComponent implements OnInit {
 
 
-  constructor(private fb: FormBuilder, private memberSer: AdminMembersService, private fbd: FormBuilder) {
+  constructor(private fb: FormBuilder, public memberSer: AdminMembersService, private fbd: FormBuilder) {
 
 
 
 
   }
+  memberSearch;
   public members = [];
   // public members: IMember[] = [];
   adminMembers;

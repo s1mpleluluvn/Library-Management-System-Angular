@@ -10,7 +10,7 @@ import { AdminMembersService } from 'src/app/adminServices/admin-members.service
 export class DemoComponent implements OnInit {
 
   myrr;
-  constructor(private memberSer: AdminMembersService) {
+  constructor(public memberSer: AdminMembersService) {
     this.memberSer.getMembyId(1).subscribe(data => {
       this.myrr = data;
 

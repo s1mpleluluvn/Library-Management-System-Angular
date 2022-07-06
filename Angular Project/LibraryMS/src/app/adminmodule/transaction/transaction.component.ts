@@ -10,7 +10,7 @@ import { AdminBooksService } from 'src/app/adminServices/admin-books.service';
 })
 export class TransactionComponent implements OnInit {
 
-  constructor(private memberSer: AdminMembersService, private bookSer: AdminBooksService) { }
+  constructor(public memberSer: AdminMembersService, public bookSer: AdminBooksService) { }
   public reqUsers;
   public recUsers;
   user

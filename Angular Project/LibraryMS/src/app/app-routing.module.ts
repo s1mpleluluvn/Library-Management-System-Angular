@@ -39,6 +39,13 @@ const routes: Routes = [
   {
     path: 'about', component: FullwidthuserComponent, children: [{ path: 'user', component: UserComponent }]
   },
+  {
+    path: '', component: FullwidthadminComponent, children: [{ path: 'home', component: AdminComponent, }]
+  },
+  {
+    path: '', component: FullwidthadminComponent, children: [{ path: 'login', component: AdminComponent, }]
+  },
+
 
 
   {

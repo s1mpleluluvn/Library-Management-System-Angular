@@ -1,0 +1,117 @@
+openapi: 3.0.1
+info:
+  title: Sherry
+  version: v1
+servers:
+- url: http://localhost:8080
+  description: Generated server url
+tags:
+- name: AccountController
+  description: Quản lý và cập nhật mật khẩu người dùng
+paths:
+  /adminPassword/register:
+    post:
+      tags:
+      - AccountController
+      description: Tạo tài khoản mới
+      operationId: register
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegisterRequest'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/DefaultResponse'
+      security:
+      - bearerAuth: []
+  /adminPassword/login:
+    post:
+      tags:
+      - AccountController
+      description: Đăng nhập
+      operationId: login
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/DefaultResponse'
+      security:
+      - bearerAuth: []
+components:
+  schemas:
+    ApiError:
+      type: object
+      properties:
+        errorCode:
+          type: string
+          description: Mã lỗi
+        message:
+          type: string
+          description: Thông báo lỗi
+      description: Thông tin lỗi
+    RegisterRequest:
+      required:
+      - password
+      - username
+      type: object
+      properties:
+        username:
+          type: string
+          description: Tên đăng nhập
+          example: ctinadmin
+        password:
+          type: string
+          description: Mật khẩu đăng nhập
+          example: ctin@123456
+        email:
+          type: string
+        phoneNumber:
+          type: string
+    DefaultResponse:
+      type: object
+      properties:
+        _error:
+          $ref: '#/components/schemas/ApiError'
+        result:
+          type: string
+          description: Kết quả
+    LoginRequest:
+      required:
+      - password
+      - username
+      type: object
+      properties:
+        username:
+          type: string
+          description: Tên đăng nhập
+          example: ctinadmin
+        password:
+          type: string
+          description: Mật khẩu đăng nhập
+          example: ctin@123456
+        device:
+          type: string
+          description: Thiết bị đăng nhập
+          example: Chrome 90
+        captchaToken:
+          type: string
+          description: Mã captcha
+          example: abcxyz
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer

@@ -14,7 +14,7 @@ export class AdminmoduleComponent implements OnInit {
   adminProfile;
   reqUsers;
   badge;
-  constructor(private adminDat: AdminAuthService, private memberSer: AdminMembersService) { }
+  constructor(private adminDat: AdminAuthService, public memberSer: AdminMembersService) { }
 
   ngOnInit() {
     if (sessionStorage) {

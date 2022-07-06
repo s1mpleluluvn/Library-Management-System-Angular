@@ -9,8 +9,8 @@ import { IBook } from './books';
   styleUrls: ['./books.component.css']
 })
 export class BooksComponent implements OnInit {
-
-  constructor(private fb: FormBuilder, private bookSer: AdminBooksService, private fbd: FormBuilder) { }
+  bookSearch;
+  constructor(private fb: FormBuilder, public bookSer: AdminBooksService, private fbd: FormBuilder) { }
   public books = [];
   adminBooksUp;
   adminBooks;

@@ -11,10 +11,12 @@ import { IMember } from 'src/app/adminmodule/members/members';
 })
 export class UserComponent implements OnInit {
 
-  constructor(private memberSer: AdminMembersService, private router: Router) { }
+  constructor(public memberSer: AdminMembersService, public router: Router) { }
   user;
   public members = [];
   temp;
+  username;
+  password;
 
   userSubmit(form: NgForm) {
     this.user = form.value;
